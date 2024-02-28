@@ -20,8 +20,11 @@ function App() {
     }
   };
 
-  console.log(messages);
-  
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === 'Enter') {
+      handleAddMessage();
+    }
+  }
 
   useEffect(() => {
     onValue(messageRef.current, (snapshot) => {
@@ -33,21 +36,22 @@ function App() {
 
 
   return (
-    <div className="flex flex-col gap-2 w-screen h-screen p-2">
-      <div className="flex flex-col w-full gap-2 h-full">
+    <div className="flex flex-col gap-4 w-screen h-screen p-4">
+      <div className="chat-container flex flex-col w-full gap-2 max-h-full overflow-auto">
         {messages &&
           !!messages.length &&
-          messages.map((msg, index) => <p key={index}>{msg}</p>)}
+          messages.map((msg, index) => <p key={index} className="message px-4 mx-2 py-2">{msg}</p>)}
       </div>
       <div className="flex gap-2">
         <input
           type="text"
-          className="w-full border-black border-[1px] px-3 py-2"
+          className="input-field w-full border-black border-[1px] px-4 py-2 rounded-full"
           value={inputMsgValue}
           onChange={(event) => setInputMsgValue(event.target.value)}
+          onKeyDown={(event) => handleKeyDown(event)}
         />
         <button
-          className="bg-blue-600 text-white px-3 hover:bg-blue-700"
+          className="bg-blue-600 text-white px-3 hover:bg-blue-700 rounded-full"
           onClick={handleAddMessage}
         >
           Send
