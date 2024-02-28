@@ -14,9 +14,11 @@
 }
 
 .message {
-    border-radius: 999px;
+    border-radius: 24px;
     background-color: #F0F0F0;
     width: fit-content;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
 .input-field {
