@@ -43,7 +43,7 @@ function App() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col gap-4 w-screen h-screen p-4">
+    <div className="main-screen flex flex-col gap-4 w-screen h-screen p-4">
       <div className="chat-container flex flex-col w-full gap-2 max-h-full overflow-auto">
         {messages &&
           !!messages.length &&
