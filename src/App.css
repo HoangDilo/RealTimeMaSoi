@@ -1,0 +1,21 @@
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 4px;
+}
+
+.message {
+    border-radius: 999px;
+    background-color: #F0F0F0;
+    width: fit-content;
+}
+
+.input-field {
+    border: 1px solid #979797;
+}
+
+.input-field:focus {
+    outline: none;
+}
