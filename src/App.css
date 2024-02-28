@@ -1,5 +1,5 @@
 .main-screen {
-    background-image: url('./../public/bg.webp');
+    background-image: url('./../public/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -15,7 +15,8 @@
 
 .message {
     border-radius: 24px;
-    background-color: #F0F0F0;
+    background-color: #006aff80;
+    color: white;
     width: fit-content;
     max-width: 80%;
     word-wrap: break-word;
@@ -23,6 +24,7 @@
 
 .input-field {
     border: 1px solid #979797;
+    background-color: #ffffff80;
 }
 
 .input-field:focus {
