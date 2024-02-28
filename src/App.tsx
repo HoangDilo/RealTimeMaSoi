@@ -53,6 +53,7 @@ function App() {
       setIsAbleToChat(false);
       const timeout = setTimeout(() => {
         setIsAbleToChat(true);
+        messageSentCount.current = 0;
       }, 30000);
 
       return () => clearTimeout(timeout);
