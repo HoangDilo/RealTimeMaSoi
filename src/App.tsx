@@ -18,9 +18,6 @@ function App() {
       const newArr = messages ? [...messages, inputMsgValue] : [inputMsgValue];
       set(messageRef.current, newArr).then(() => {
         setInputMsgValue("");
-        bottomViewRef.current?.scrollIntoView({
-          behavior: "smooth"
-        })
       });
     }
   };
@@ -38,6 +35,12 @@ function App() {
 
     return () => off(messageRef.current, "value");
   }, []);
+
+  useEffect(() => {
+    bottomViewRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [messages]);
 
   return (
     <div className="flex flex-col gap-4 w-screen h-screen p-4">
