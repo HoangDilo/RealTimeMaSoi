@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { database } from "./../firebase.config";
 import { ref, set, onValue, off } from "firebase/database";
@@ -56,6 +56,12 @@ function App() {
       }, 30000);
 
       return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        messageSentCount.current = 0;
+      }, 5000);
+
+      return () => clearTimeout(timeout)
     }
   }, [messageSentCount.current]);
 
