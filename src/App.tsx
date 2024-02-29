@@ -17,7 +17,7 @@ function App() {
   const messageRef = useRef(ref(database, "message"));
 
   const handleAddMessage = () => {
-    if (inputMsgValue && isAbleToChat) {
+    if (inputMsgValue && isAbleToChat && inputMsgValue.length < 150) {
       const newArr = messages ? [...messages, inputMsgValue] : [inputMsgValue];
       set(messageRef.current, newArr).then(() => {
         setInputMsgValue("");
