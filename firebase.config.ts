@@ -3,14 +3,14 @@ import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDauR1npVegutns9dlpNy_P8xQ1fTOdVSM",
-  authDomain: "rieltimemasoi.firebaseapp.com",
-  projectId: "rieltimemasoi",
-  storageBucket: "rieltimemasoi.appspot.com",
-  messagingSenderId: "339283335662",
-  appId: "1:339283335662:web:bc1c3b7b8b38317a2096ff",
-  measurementId: "G-Q5T49W0SV7",
-  databaseURL: "https://rieltimemasoi-default-rtdb.asia-southeast1.firebasedatabase.app/"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
 };
 
 export const app = initializeApp(firebaseConfig);
